@@ -2,9 +2,8 @@
 This is a simple To-Do List application built with Spring Boot and MySQL. It allows users to create, update, delete, and retrieve tasks using a REST API.
 
 ## Getting Started
-- Before running the project, make sure you have installed:
+Before running the project, make sure you have installed:
 - Java 17+
-- Maven
 - MySQL Server
 
 ## Create MySQL Database to-do-list
@@ -18,13 +17,23 @@ spring.jpa.show-sql=true
 Follow these instructions to get a copy of the project up and running on your local machine.
 
 ### How to Run the Project
-Using Maven
 - mvn clean install
 - mvn spring-boot:run
 
 ##  API Endpoints
 ### Use Postman to test end points
 - Add a new task: localhost:8080/api/addTask
+  - {
+    "name": "Task",
+    "description": "Task description",
+    "status": 0
+    }
 - Get all tasks: localhost:8080/api/allTasks
 - Update task status: localhost:8080/api/updateTaskStatus
+  - {
+    "id": {task_id},
+    "status": 1
+    }
 - Delete a task by ID: localhost:8080/api/deleteTask/{id}
+### Task status updated in boolean values (Consider: 0 - Incomplete, 1 - Completed)
+
