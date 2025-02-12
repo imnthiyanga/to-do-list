@@ -1,21 +1,30 @@
-# To-Do List Project
+# To-Do List App
+This is a simple To-Do List application built with Spring Boot and MySQL. It allows users to create, update, delete, and retrieve tasks using a REST API.
 
 ## Getting Started
+- Before running the project, make sure you have installed:
+- Java 17+
+- Maven
+- MySQL Server
+
+## Create MySQL Database to-do-list
+### Update src/main/resources/application.properties
+spring.application.name=to-do-list
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 
 Follow these instructions to get a copy of the project up and running on your local machine.
 
-### Prerequisites
+### How to Run the Project
+Using Maven
+- mvn clean install
+- mvn spring-boot:run
 
-Make sure you have the following installed:
-- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) (version 11 or higher)
-- [Maven](https://maven.apache.org/)
-- [MySQL](https://dev.mysql.com/downloads/mysql/)
-
-### Configuration
-
-Make sure to configure your MySQL server and update the `application.properties` file located at `/src/main/resources/application.properties` with your database credentials:
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/to_do_list?createDatabaseIfNotExist=true
-spring.datasource.username=your-username
-spring.datasource.password=your-password
-```
+##  API Endpoints
+### Use Postman to test end points
+- Add a new task: localhost:8080/api/addTask
+- Get all tasks: localhost:8080/api/allTasks
+- Update task status: localhost:8080/api/updateTaskStatus
+- Delete a task by ID: localhost:8080/api/deleteTask/{id}
